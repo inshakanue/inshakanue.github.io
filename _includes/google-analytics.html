@@ -1,11 +1,46 @@
-{% comment %} Google Analytics {% endcomment %}
+<!-- 
+  GOOGLE ANALYTICS INTEGRATION
+  ============================
+  This file conditionally includes Google Analytics tracking code.
+  
+  Configuration:
+  - Only loads if google-analytics.id is set in _config.yml
+  - Uses the legacy Google Analytics (ga.js) implementation
+  - Tracks page views automatically
+  
+  To enable analytics:
+  1. Set google-analytics.id in _config.yml
+  2. Get your tracking ID from Google Analytics dashboard
+  
+  Security Note:
+  - This uses the older Universal Analytics (ga.js) which is being deprecated
+  - Consider upgrading to Google Analytics 4 (gtag.js) for future compatibility
+-->
+
+{% comment %} Google Analytics Integration {% endcomment %}
+
+<!-- Only include analytics if tracking ID is configured -->
 {% if site.google-analytics %}
 <script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-ga('create', '{{ site.google-analytics.id }}', 'auto');
-ga('send', 'pageview');
+  // Google Analytics Universal Analytics (ga.js) implementation
+  // This is the legacy version - consider upgrading to GA4
+  (function(i,s,o,g,r,a,m){
+    i['GoogleAnalyticsObject']=r;
+    i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)
+    },
+    i[r].l=1*new Date();
+    a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];
+    a.async=1;
+    a.src=g;
+    m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  
+  // Initialize Google Analytics with tracking ID from config
+  ga('create', '{{ site.google-analytics.id }}', 'auto');
+  
+  // Send pageview event
+  ga('send', 'pageview');
 </script>
 {% endif %}

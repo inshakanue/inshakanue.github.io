@@ -1,21 +1,75 @@
-# Site settings
-title: Insha Kanue | AI Product Manager
+# 
+# JEKYLL CONFIGURATION FILE
+# =========================
+# This file contains all the configuration settings for the Jekyll website.
+# Jekyll uses this file to generate the static site and populate template variables.
+#
+# Documentation: https://jekyllrb.com/docs/configuration/
+#
+
+# 
+# SITE METADATA
+# =============
+# These settings define the basic information about the website
+# and are used in meta tags, page titles, and SEO.
+#
+title: Insha Kanue | AI Product Manager                    # Main site title (appears in browser tab)
 keywords: Insha, Insha Kanue, AI Product Manager, Computer Science Engineer, Kashmir, Srinagar, Anantnag, tech blogging, design, UI, user interface, UX, user experience, user experience design  
-description: Portfolio website of AI Product Manager Insha Kanue
+description: Portfolio website of AI Product Manager Insha Kanue  # Site description for SEO
+
+# 
+# URL CONFIGURATION
+# =================
+# These settings control the site's URL structure.
+# Uncomment and modify if deploying to a subdirectory or custom domain.
+#
 # baseurl: "/particle" # the subpath of your site, e.g. /blog
 # url: "localhost:3000" # the base hostname & protocol for your site e.g. http://willianjusten.com.br
 
-# User settings
-username: Insha Kanue
-user_description: AI Product Manager
-user_title: AI Product Manager
-#email:
-linkedin_username: inshakanue
-twitter_username: InshaKanue
-github_username: inshakanue
+# 
+# USER PROFILE INFORMATION
+# ========================
+# These settings define the personal information displayed on the website.
+# They are used in templates to populate the hero section and social links.
+#
+username: Insha Kanue                    # Full name displayed in hero section
+user_description: AI Product Manager     # Professional description/tagline
+user_title: AI Product Manager          # Job title (used in page titles)
 
-# Google-analytics
+# 
+# CONTACT INFORMATION
+# ===================
+# Email is commented out for privacy. Uncomment and add email if desired.
+# The email link in header.html is also commented out for security.
+#
+#email: your-email@example.com
+
+# 
+# SOCIAL MEDIA PROFILES
+# =====================
+# These usernames are used to generate social media links in the header.
+# Only the platforms that are configured here will show up on the website.
+#
+linkedin_username: inshakanue            # LinkedIn profile username
+twitter_username: InshaKanue             # Twitter handle
+github_username: inshakanue              # GitHub username
+
+# 
+# ANALYTICS CONFIGURATION
+# =======================
+# Google Analytics tracking configuration.
+# To enable analytics:
+# 1. Get your tracking ID from Google Analytics dashboard
+# 2. Replace the empty string below with your tracking ID
+# 3. The tracking code will be automatically included in the site
+#
 google-analytics:
-  id: ""
+  id: ""                                 # Google Analytics tracking ID (currently disabled)
 
-exclude: ['package.json', 'src' , 'node_modules']
+# 
+# BUILD EXCLUSIONS
+# ================
+# Files and directories listed here will be excluded from the Jekyll build process.
+# This prevents unnecessary files from being copied to the _site directory.
+#
+exclude: ['package.json', 'src' , 'node_modules']  # Exclude build tools and source files
