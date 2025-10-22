@@ -3,7 +3,7 @@ $sec: #4B5664;
 $purple: #54516A;
 $cut: 768px;
 
-@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
 
 body {
   margin: 0;
@@ -173,82 +173,6 @@ body {
   }
 }
 
-.user {
-  text-align: center;
-  margin: 20px auto;
-  font-size: 60px;
-  p {
-    font-size: 16px;
-  }
-  @media only screen and (min-width: $cut) {
-    font-size: 75px;
-  }
-}
-
-.user-details {
-  text-align: center;
-  font-size: 16px;
-  margin: 10px auto;
-}
-
-.user-projects {
-  margin: 40px auto;
-  img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 5px;
-  }
-  h5 {
-    margin: 0;
-  }
-  li {
-    color: $main;
-    font-size: 1.1rem;
-  }
-  p {
-    margin-right: 5px;
-  }
-}
-
-.images {
-  @media only screen and (min-width: $cut) {
-    float: right;
-  }
-}
-
-.project-link {
-  display: block;
-  width: 100px;
-  margin: 10px 0px;
-  padding: 5px;
-  color: $main;
-  background-color: transparent;
-  border: 1px solid $main;
-  border-radius: 10px;
-  text-align: center;
-  outline: none;
-  text-decoration: none;
-  cursor: pointer;
-  transition: color 0.3s ease-out,
-              background-color 0.3s ease-out,
-              border-color 0.3s ease-out;
-  &:hover {
-    background-color: $purple;
-    border-color: $purple;
-    color: #fff;
-    transition: color 0.3s ease-in,
-                background-color 0.3s ease-in,
-                border-color 0.3s ease-in;
-  }
-  &:active {
-    background-color: $purple;
-    border-color: $purple;
-    color: #fff;
-    transition: color 0.3s ease-in,
-                background-color 0.3s ease-in,
-                border-color 0.3s ease-in;
-  }
-}
 
 .footer {
   background: $main;
