@@ -1,197 +1,310 @@
-$main: #1a222c;
-$sec: #4B5664;
-$purple: #54516A;
-$cut: 768px;
+/* 
+  MAIN STYLESHEET - SCSS SOURCE
+  =============================
+  This is the main SCSS file that gets compiled to CSS.
+  It contains all the styling for the portfolio website including:
+  - Color scheme and design tokens
+  - Typography and font imports
+  - Layout and positioning
+  - Animations and transitions
+  - Responsive design breakpoints
+  
+  The file is processed by Gulp and compiled to assets/css/main.css
+*/
 
+/* 
+  DESIGN TOKENS / VARIABLES
+  =========================
+  These SCSS variables define the color scheme and breakpoints
+  used throughout the site. This makes it easy to maintain
+  consistent styling and update colors globally.
+*/
+$main: #1a222c;        // Primary dark blue color (background, text)
+$sec: #4B5664;         // Secondary gray color (hover states, accents)
+$purple: #54516A;      // Purple accent color (buttons, highlights)
+$cut: 768px;           // Mobile/desktop breakpoint
+
+/* 
+  TYPOGRAPHY
+  ==========
+  Import Google Fonts with multiple weights for design flexibility.
+  The display=swap parameter ensures text remains visible during font load.
+*/
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
 
+/* 
+  BASE STYLES
+  ===========
+  Reset and base styling for consistent cross-browser appearance.
+*/
 body {
-  margin: 0;
-  font-family: 'Montserrat', sans-serif;
+  margin: 0;                                    // Remove default browser margins
+  font-family: 'Montserrat', sans-serif;        // Set primary font family
 }
 
+/* 
+  ANIMATIONS
+  ==========
+  Keyframe animations for interactive elements.
+  The pulse animation is used for the scroll indicator arrow.
+*/
+
+/* WebKit-specific pulse animation (for older browsers) */
 @-webkit-keyframes pulse {
     from {
-        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
-        filter: alpha(opacity=40);
-        opacity: .4;
-        top: 0;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";  // IE8 opacity
+        filter: alpha(opacity=40);                                          // IE8 opacity
+        opacity: .4;                                                        // Start with 40% opacity
+        top: 0;                                                             // Start position
     }
     50% {
-        -ms-filter: none;
-        -webkit-filter: none;
-        filter: none;
-        opacity: 1;
-        top: -10px;
+        -ms-filter: none;                                                   // Remove IE8 filter
+        -webkit-filter: none;                                               // Remove WebKit filter
+        filter: none;                                                       // Remove modern filter
+        opacity: 1;                                                         // Full opacity at peak
+        top: -10px;                                                         // Move up 10px
     }
     to {
-        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
-        filter: alpha(opacity=40);
-        opacity: .4;
-        top: 0;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";  // Back to IE8 opacity
+        filter: alpha(opacity=40);                                          // Back to IE8 opacity
+        opacity: .4;                                                        // Back to 40% opacity
+        top: 0;                                                             // Back to start position
     }
 }
 
+/* Standard pulse animation (modern browsers) */
 @keyframes pulse {
     from {
-        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
-        filter: alpha(opacity=40);
-        opacity: .4;
-        top: 0
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";  // IE8 opacity
+        filter: alpha(opacity=40);                                          // IE8 opacity
+        opacity: .4;                                                        // Start with 40% opacity
+        top: 0;                                                             // Start position
     }
     50% {
-        -ms-filter: none;
-        -webkit-filter: none;
-        filter: none;
-        opacity: 1;
-        top: -10px
+        -ms-filter: none;                                                   // Remove IE8 filter
+        -webkit-filter: none;                                               // Remove WebKit filter
+        filter: none;                                                       // Remove modern filter
+        opacity: 1;                                                         // Full opacity at peak
+        top: -10px;                                                         // Move up 10px
     }
     to {
-        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
-        filter: alpha(opacity=40);
-        opacity: .4;
-        top: 0
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";  // Back to IE8 opacity
+        filter: alpha(opacity=40);                                          // Back to IE8 opacity
+        opacity: .4;                                                        // Back to 40% opacity
+        top: 0;                                                             // Back to start position
     }
 }
 
+/* 
+  PARTICLES BACKGROUND CONTAINER
+  ==============================
+  The main container for the particles.js animated background.
+  This creates a full-screen background with the particles effect.
+*/
 #particles-js {
-  background: $main;
-  display: block;
-  vertical-align: bottom;
-  width: 100vw;
-  min-height: 100vh;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
+  background: $main;                         // Use primary color as background
+  display: block;                            // Ensure it's a block element
+  vertical-align: bottom;                    // Align to bottom
+  width: 100vw;                             // Full viewport width
+  min-height: 100vh;                        // Full viewport height
+  background-repeat: no-repeat;              // Prevent background repetition
+  background-size: cover;                    // Cover entire container
+  background-attachment: fixed;              // Fixed background (parallax effect)
+  
+  /* Particles canvas styling */
   .particles-js-canvas-el {
-    width:100vw !important;
-    height:100vh !important;
+    width: 100vw !important;                 // Force full width
+    height: 100vh !important;                // Force full height
   }
 }
 
+/* 
+  MAIN CONTENT AREA
+  =================
+  The content that appears over the particles background.
+  Centered both horizontally and vertically.
+*/
 .content {
-  z-index: 1;
-  text-align: center;
-  color:#FFF;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin: 0 auto;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+  z-index: 1;                               // Ensure content appears above particles
+  text-align: center;                       // Center all text content
+  color: #FFF;                              // White text for contrast
+  position: absolute;                        // Absolute positioning for centering
+  top: 50%;                                 // Start at 50% from top
+  left: 50%;                                // Start at 50% from left
+  margin: 0 auto;                           // Center horizontally
+  -webkit-transform: translate(-50%, -50%); // WebKit transform for centering
+  transform: translate(-50%, -50%);         // Modern transform for centering
+  
+  /* Site title styling */
   .site-title {
-    font-size: 50px;
-    display: block;
-    line-height: 1;
-    @media only screen and (min-width:$cut){
-      margin: 0;
-      font-size: 100px;
+    font-size: 50px;                        // Mobile font size
+    display: block;                         // Block element
+    line-height: 1;                         // Tight line height
+    color: #b8d853;                         // Brand green color
+    
+    /* Desktop font size */
+    @media only screen and (min-width: $cut) {
+      margin: 0;                            // Remove margins
+      font-size: 100px;                     // Larger font for desktop
     }
   }
+  
+  /* Site description styling */
   .site-description {
-    font-size: 20px;
-    display: block;
-    line-height: 1;
-    margin: 5px 0 10px 0;
-    @media only screen and (min-width:$cut){
-      font-size: 40px;
+    font-size: 20px;                        // Mobile font size
+    display: block;                         // Block element
+    line-height: 1;                         // Tight line height
+    margin: 5px 0 10px 0;                   // Vertical margins
+    color: #b8d853;                         // Brand green color
+    
+    /* Desktop font size */
+    @media only screen and (min-width: $cut) {
+      font-size: 40px;                      // Larger font for desktop
     }
   }
+  
+  /* Link styling */
   .link {
-    color: #FFF;
-    display: inline-flex;
-    justify-content: space-between;
-    text-decoration: none;
-    font-size: 15px;
-    margin: 10px;
-    @media only screen and (min-width:$cut){
-      font-size: 20px;
+    color: #FFF;                            // White text
+    display: inline-flex;                    // Flexbox for alignment
+    justify-content: space-between;          // Space between elements
+    text-decoration: none;                  // Remove underlines
+    font-size: 15px;                        // Mobile font size
+    margin: 10px;                           // Margin around links
+    
+    /* Desktop font size */
+    @media only screen and (min-width: $cut) {
+      font-size: 20px;                      // Larger font for desktop
     }
   }
 }
 
+/* 
+  SLOGAN SECTION
+  ==============
+  The professional tagline that appears below the name.
+*/
+.slogan {
+  color: #6c48ab;                           // Purple color for tagline
+  
+  /* Desktop styling */
+  @media only screen and (min-width: $cut) {
+    color: #6c48ab;                         // Maintain purple on desktop
+  }
+}
+
+/* 
+  SOCIAL MEDIA ICONS
+  ==================
+  Styling for the social media links in the header.
+*/
 .icons-header {
-  display: flex;
-  justify-content: center;
-  text-align: center;
+  display: flex;                            // Flexbox for horizontal layout
+  justify-content: center;                  // Center the icons
+  text-align: center;                       // Center text within icons
+  
+  /* Individual icon styling */
   .icon {
-    text-align: center;
-    color: #FFF;
-    width: 20px;
-    height: 20px;
-    font-size: 20px;
-    padding: 10px;
-    margin: 2px;
-    border-radius: 50%;
-    border: 2px solid #FFF;
-    transition: all .7s;
+    text-align: center;                     // Center icon content
+    color: #FFF;                            // White color
+    width: 20px;                            // Mobile icon size
+    height: 20px;                           // Mobile icon size
+    font-size: 20px;                        // Mobile font size
+    padding: 10px;                          // Padding around icons
+    margin: 2px;                            // Small margin between icons
+    border-radius: 50%;                     // Circular icons
+    border: 2px solid #FFF;                 // White border
+    transition: all .7s;                    // Smooth transitions
+    
+    /* Hover and active states */
     &:hover {
-      color: $main;
-      background: #FFF;
+      color: $main;                         // Dark color on hover
+      background: #FFF;                     // White background on hover
     }
     &:active {
-      color: $main;
-      background: #FFF;
+      color: $main;                         // Dark color when clicked
+      background: #FFF;                     // White background when clicked
     }
-    @media only screen and (min-width:$cut) {
-      width: 35px;
-      height: 35px;
-      font-size: 35px;
+    
+    /* Desktop icon sizing */
+    @media only screen and (min-width: $cut) {
+      width: 35px;                          // Larger icons on desktop
+      height: 35px;                         // Larger icons on desktop
+      font-size: 35px;                      // Larger font size on desktop
     }
   }
 }
 
+/* 
+  SCROLL INDICATOR
+  ================
+  The down arrow that indicates users can scroll to see more content.
+*/
 .down {
-  color: #FFF;
-  position: absolute;
-  bottom: 25px;
-  width: 100%;
-  margin: 0 auto;
-  display: block;
-  text-align: center;
-  font-size: 30px;
-  cursor: pointer;
+  color: #FFF;                              // White color
+  position: absolute;                       // Absolute positioning
+  bottom: 25px;                            // 25px from bottom
+  width: 100%;                             // Full width
+  margin: 0 auto;                          // Center horizontally
+  display: block;                          // Block element
+  text-align: center;                      // Center text
+  font-size: 30px;                         // Large font size
+  cursor: pointer;                         // Pointer cursor on hover
+  
+  /* Icon styling within the down arrow */
   .icon {
-      position: absolute;
-      -webkit-transform-style: preserve-3d;
-      transform-style: preserve-3d;
-      top: 50%;
-      left: 50%;
-      -webkit-transform: translate(-50%, -50%);
-      transform: translate(-50%, -50%);
-      width: 100px;
-      height: 100px;
-      fill: #fff;
-      -webkit-animation: pulse 1.3s infinite;
-      animation: pulse 1.3s infinite;
+    position: absolute;                     // Absolute positioning
+    -webkit-transform-style: preserve-3d;   // WebKit 3D transform
+    transform-style: preserve-3d;           // Modern 3D transform
+    top: 50%;                              // Center vertically
+    left: 50%;                             // Center horizontally
+    -webkit-transform: translate(-50%, -50%); // WebKit centering
+    transform: translate(-50%, -50%);       // Modern centering
+    width: 100px;                          // Large icon size
+    height: 100px;                         // Large icon size
+    fill: #fff;                            // White fill color
+    -webkit-animation: pulse 1.3s infinite; // WebKit pulse animation
+    animation: pulse 1.3s infinite;        // Modern pulse animation
+    
+    /* Hover states */
       &:hover {
-        color: $sec;
+      color: $sec;                         // Secondary color on hover
       }
       &:active {
-        color: $sec;
-      }
+      color: $sec;                         // Secondary color when clicked
+    }
   }
 }
 
-
+/* 
+  FOOTER STYLING
+  ==============
+  The footer section at the bottom of the page.
+*/
 .footer {
-  background: $main;
-  padding: 10px 0;
-  margin-top: 100px;
-  text-align: center;
-  color: #FFF;
+  background: $main;                        // Primary background color
+  padding: 10px 0;                         // Vertical padding
+  margin-top: 100px;                       // Space from content above
+  text-align: center;                      // Center all text
+  color: #FFF;                             // White text
+  
+  /* Heart emoji styling */
   .love {
-    color: red;
+    color: red;                            // Red color for heart
   }
+  
+  /* Footer links */
   a {
-    text-decoration: none;
-    margin: 0;
-    color: #FFF;
-    &:hover{
-      color: $sec;
+    text-decoration: none;                 // Remove underlines
+    margin: 0;                             // Remove margins
+    color: #FFF;                           // White text
+    
+    /* Hover states for different link types */
+    &:hover {
+      color: $sec;                         // Secondary color on hover
     }
     &:active {
-      color: $sec;
+      color: $sec;                         // Secondary color when clicked
     }
   }
 }
