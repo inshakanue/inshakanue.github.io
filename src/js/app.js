@@ -2,32 +2,33 @@
 document.addEventListener("DOMContentLoaded", function () {
   const sweetScroll = new SweetScroll({/* some options */});
 
-  /* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
+  // Set current year
+  const yearElement = document.getElementById('current-year');
+  if (yearElement) {
+    yearElement.textContent = new Date().getFullYear();
+  }
+
+  // Initialize particles.js with optimized configuration
   particlesJS('particles-js', {
     "particles": {
       "number": {
-        "value": 30,
+        "value": 40,
         "density": {
           "enable": true,
-          "value_area": 800
+          "value_area": 400
         }
       },
       "color": {
-        "value": "#ffffff"
+        "value": "#b8d853"
       },
       "shape": {
-        "type": "polygon",
+        "type": "star",
         "stroke": {
-          "width": 0,
+          "width": 1,
           "color": "#000000"
         },
-        "polygon": {
+        "star": {
           "nb_sides": 5
-        },
-        "image": {
-          "src": "img/github.svg",
-          "width": 100,
-          "height": 100
         }
       },
       "opacity": {
@@ -53,13 +54,13 @@ document.addEventListener("DOMContentLoaded", function () {
       "line_linked": {
         "enable": true,
         "distance": 150,
-        "color": "#ffffff",
+        "color": "#6c48ab",
         "opacity": 0.4,
-        "width": 1
+        "width": 2
       },
       "move": {
         "enable": true,
-        "speed": 4,
+        "speed": 5,
         "direction": "none",
         "random": true,
         "straight": false,
@@ -71,14 +72,14 @@ document.addEventListener("DOMContentLoaded", function () {
           "rotateY": 1200
         }
       },
-      nb: 80
+      "nb": 80
     },
     "interactivity": {
       "detect_on": "window",
       "events": {
         "onhover": {
-          "enable": false,
-          "mode": "grab"
+          "enable": true,
+          "mode": "repulse"
         },
         "onclick": {
           "enable": true,
