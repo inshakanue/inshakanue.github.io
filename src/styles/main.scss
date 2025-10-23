@@ -106,7 +106,7 @@ body {
   display: block;                            // Ensure it's a block element
   vertical-align: bottom;                    // Align to bottom
   width: 100vw;                             // Full viewport width
-  min-height: 100vh;                        // Full viewport height
+  height: 100vh;                            // Fixed viewport height
   background-repeat: no-repeat;              // Prevent background repetition
   background-size: cover;                    // Cover entire container
   background-attachment: fixed;              // Fixed background (parallax effect)
@@ -284,7 +284,7 @@ body {
 .footer {
   background: $main;                        // Primary background color
   padding: 10px 0;                         // Vertical padding
-  margin-top: 100px;                       // Space from content above
+  margin-top: 0;                           // No space from content above
   text-align: center;                      // Center all text
   color: #FFF;                             // White text
   
