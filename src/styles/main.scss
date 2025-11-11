@@ -228,12 +228,13 @@ body {
   
   /* Individual icon styling */
   .icon {
-    text-align: center;                     // Center icon content
+    display: flex;                          // Use flexbox for centering
+    align-items: center;                    // Vertically center
+    justify-content: center;                // Horizontally center
     color: #FFF;                            // White color
-    width: 20px;                            // Mobile icon size
-    height: 20px;                           // Mobile icon size
+    width: 40px;                            // Mobile circle size (icon + border)
+    height: 40px;                           // Mobile circle size (icon + border)
     font-size: 20px;                        // Mobile font size
-    padding: 10px;                          // Padding around icons
     margin: 2px;                            // Small margin between icons
     border-radius: 50%;                     // Circular icons
     border: 2px solid #FFF;                 // White border
@@ -251,9 +252,9 @@ body {
     
     /* Desktop icon sizing */
     @media only screen and (min-width: $cut) {
-      width: 35px;                          // Larger icons on desktop
-      height: 35px;                         // Larger icons on desktop
-      font-size: 35px;                      // Larger font size on desktop
+      width: 50px;                          // Larger circle on desktop
+      height: 50px;                         // Larger circle on desktop
+      font-size: 25px;                      // Larger font size on desktop
     }
   }
 }
