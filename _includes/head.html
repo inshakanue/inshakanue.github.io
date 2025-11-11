@@ -1,40 +1,16 @@
-<!-- 
-  HEAD SECTION TEMPLATE
-  =====================
-  This file contains all the HTML head elements including meta tags,
-  external resources, and page-specific configurations.
-  
-  Security Features:
-  - SRI (Subresource Integrity) hashes for external resources
-  - Security-focused meta tags
-  - HTTPS-only external resources
--->
-
 <head>
-  <!-- Basic HTML5 meta tags for proper document structure -->
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
-  <!-- Security and SEO meta tags -->
-  <meta name="theme-color" content="#1a222c"> <!-- Browser theme color matching site design -->
-  <meta name="robots" content="index, follow"> <!-- Allow search engines to index and follow links -->
+  <meta name="theme-color" content="#1a222c">
+  <meta name="robots" content="index, follow">
   
-  <!-- Dynamic page title: Uses page title if available, otherwise site title -->
   <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
 
-  <!-- SEO meta tags with Jekyll liquid templating -->
-  <!-- Description: Uses page description if available, otherwise site description, truncated to 160 chars -->
   <meta name="description" content="{% if page.description %}{{ page.description | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
-  
-  <!-- Keywords: Uses page keywords if available, otherwise site keywords -->
   <meta name="keywords" content="{% if page.keywords %}{{ page.keywords }}{% else %}{{ site.keywords }}{% endif %}">
   
-  <!-- External CSS Resources with Security Features -->
-  <!-- Font Awesome Icons: Used for social media and UI icons -->
-  <!-- SRI hash ensures the file hasn't been tampered with -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-  
-  <!-- Main site stylesheet: Compiled from SCSS source -->
   <link rel="stylesheet" href="{{ "/assets/css/main.css" | prepend: site.baseurl }}">
 </head>

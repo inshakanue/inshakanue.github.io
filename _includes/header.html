@@ -1,59 +1,32 @@
-<!-- 
-  HEADER SECTION TEMPLATE
-  =======================
-  This file contains the main hero section of the website with:
-  - Animated particles background (particles.js)
-  - Personal branding and title
-  - Professional tagline
-  - Social media links
-  - Scroll indicator
-  
-  The particles background is initialized via JavaScript in app.js
-  and creates an interactive animated effect behind the content.
--->
-
-<!-- Main hero container with particles background -->
 <div id="particles-js">
-  <!-- Content wrapper for centering and positioning -->
   <div class="content">
-      <!-- Personal branding section -->
-      <div class="insha">
-        <h1>
-          <!-- Dynamic name from Jekyll config -->
-          <span class="site-title">{{site.username}}</span>
-          <!-- Dynamic title from Jekyll config -->
-          <span class="site-description">{{site.user_title}}</span>
-        </h1>
-      </div>
+    <div class="insha">
+      <h1>
+        <span class="site-title">{{site.username}}</span>
+        <span class="site-description">{{site.user_title}}</span>
+      </h1>
+    </div>
+    
+    <div class="slogan">
+      <h2>Embedding intelligence in Products</h2>
+      <h2 class="blw">that will blow your mind!</h2>
+    </div>
+    
+    <div class="icons-header">
+      <a aria-label="My Linkedin" target="_blank" rel="noopener noreferrer" href="https://linkedin.com/in/{{site.linkedin_username}}">
+        <i class="icon fa fa-linkedin" aria-hidden="true"></i>
+      </a>
       
-      <!-- Professional tagline section -->
-      <div class="slogan">
-        <h2>Embedding intelligence in Products</h2>
-        <h2 class="blw">that will blow your mind!</h2>
-      </div>
+      <a aria-label="My Twitter" target="_blank" rel="noopener noreferrer" href="https://twitter.com/{{site.twitter_username}}">
+        <i class="icon fa fa-twitter" aria-hidden="true"></i>
+      </a>
       
-      <!-- Social media links section -->
-      <div class="icons-header">
-        <!-- LinkedIn Profile Link -->
-        <!-- rel="noopener noreferrer" prevents security vulnerabilities when opening external links -->
-        <a aria-label="My Linkedin" target="_blank" rel="noopener noreferrer" href="https://linkedin.com/in/{{site.linkedin_username}}">
-          <i class="icon fa fa-linkedin" aria-hidden="true"></i>
-        </a>
-        
-        <!-- Twitter Profile Link -->
-        <a aria-label="My Twitter" target="_blank" rel="noopener noreferrer" href="https://twitter.com/{{site.twitter_username}}">
-          <i class="icon fa fa-twitter" aria-hidden="true"></i>
-        </a>
-        
-        <!-- GitHub Profile Link -->
-        <a aria-label="My GitHub" target="_blank" rel="noopener noreferrer" href="https://github.com/{{site.github_username}}">
-          <i class="icon fa fa-github-alt" aria-hidden="true"></i>
-        </a>
-      </div>
+      <a aria-label="My GitHub" target="_blank" rel="noopener noreferrer" href="https://github.com/{{site.github_username}}">
+        <i class="icon fa fa-github-alt" aria-hidden="true"></i>
+      </a>
+    </div>
   </div>
   
-  <!-- Scroll indicator: Smooth scrolls to footer when clicked -->
-  <!-- data-scroll attribute is used by SweetScroll library for smooth scrolling -->
   <a class="down" href="#footer" data-scroll>
     <i class="icon fa fa-chevron-down" aria-hidden="true"></i>
   </a>

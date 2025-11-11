@@ -1,51 +1,17 @@
-<!-- 
-  FOOTER SECTION TEMPLATE
-  =======================
-  This file contains the footer section with:
-  - Technology credits (Jekyll, GitHub Pages)
-  - Copyright information with dynamic year
-  - JavaScript libraries for site functionality
-  - Google Analytics integration
-  
-  The footer also serves as the scroll target for the down arrow in the header.
--->
-
-<!-- Main footer container -->
 <footer class="footer" id="footer">
-    <!-- Technology credits section -->
     <p>Built with <span class="love">❤</span> using 
       <a href="https://jekyllrb.com/" target="_blank" rel="noopener noreferrer" class="jekyll">Jekyll</a> 
       & Hosted on 
       <a href="https://pages.github.com/" title="GitHub Pages" target="_blank" rel="noopener noreferrer" class="github">GitHub</a>
     </p>
     
-    <!-- Copyright section with dynamic year -->
-    <!-- The year is set dynamically via JavaScript in app.js -->
     <p>&copy;copyright 
       <a href="/index.html" class="ik">{{site.username}}</a> 
       <span id="current-year"></span>
     </p>
 </footer>
 
-<!-- 
-  JAVASCRIPT LIBRARIES
-  ====================
-  These scripts are loaded in order of dependency:
-  1. particles.js - Creates the animated background effect
-  2. sweet-scroll.min.js - Enables smooth scrolling animations
-  3. main.js - Site-specific JavaScript functionality
-  4. google-analytics.html - Analytics tracking (if configured)
--->
-
-<!-- Particles.js library for animated background -->
-<!-- crossorigin="anonymous" allows cross-origin requests without credentials -->
 <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js" crossorigin="anonymous"></script>
-
-<!-- SweetScroll library for smooth scrolling animations -->
 <script src="{{ "/assets/js/sweet-scroll.min.js" | prepend: site.baseurl }}"></script>
-
-<!-- Main site JavaScript (compiled from src/js/app.js) -->
 <script src="{{ "/assets/js/main.js" | prepend: site.baseurl }}"></script>
-
-<!-- Google Analytics integration (conditional include) -->
 {% include google-analytics.html %}

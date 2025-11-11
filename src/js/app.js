@@ -1,204 +1,107 @@
-/* 
-  MAIN JAVASCRIPT APPLICATION
-  ===========================
-  This file contains all the JavaScript functionality for the portfolio website.
-  It handles:
-  - Smooth scrolling initialization
-  - Dynamic year display in footer
-  - Particles.js background animation configuration
-  
-  Dependencies:
-  - SweetScroll library (for smooth scrolling)
-  - particles.js library (for animated background)
-  
-  This file is compiled and minified by Gulp to assets/js/main.js
-*/
-
-/* 
-  INITIALIZATION
-  ==============
-  Wait for the DOM to be fully loaded before initializing any functionality.
-  This ensures all HTML elements are available for manipulation.
-*/
 document.addEventListener("DOMContentLoaded", function () {
   
-  /* 
-    SMOOTH SCROLLING INITIALIZATION
-    ===============================
-    Initialize SweetScroll library for smooth scrolling animations.
-    This enables the smooth scroll effect when clicking the down arrow.
-  */
-  const sweetScroll = new SweetScroll({
-    /* Default options are used - can be customized here if needed */
-  });
+  const sweetScroll = new SweetScroll({});
 
-  /* 
-    DYNAMIC YEAR DISPLAY
-    ====================
-    Set the current year in the footer dynamically.
-    This ensures the copyright year is always current without manual updates.
-  */
   const yearElement = document.getElementById('current-year');
   if (yearElement) {
     yearElement.textContent = new Date().getFullYear();
   }
 
-  /* 
-    PARTICLES.JS CONFIGURATION
-    ===========================
-    Initialize the animated particles background effect.
-    This creates an interactive starfield background that responds to user interaction.
-  */
   particlesJS('particles-js', {
-    
-    /* 
-      PARTICLE CONFIGURATION
-      ======================
-      Defines the appearance and behavior of individual particles
-    */
     "particles": {
-      
-      /* Number of particles and density */
       "number": {
-        "value": 40,                        // Total number of particles
+        "value": 40,
         "density": {
-          "enable": true,                   // Enable density-based scaling
-          "value_area": 400                 // Area per particle (smaller = more dense)
+          "enable": true,
+          "value_area": 400
         }
       },
-      
-      /* Particle color scheme */
       "color": {
-        "value": "#b8d853"                  // Brand green color for particles
+        "value": "#b8d853"
       },
-      
-      /* Particle shape configuration */
       "shape": {
-        "type": "star",                     // Use star shapes for particles
+        "type": "star",
         "stroke": {
-          "width": 1,                       // Border width
-          "color": "#000000"                // Black border color
+          "width": 1,
+          "color": "#000000"
         },
         "star": {
-          "nb_sides": 5                     // 5-pointed stars
+          "nb_sides": 5
         }
       },
-      
-      /* Opacity settings */
       "opacity": {
-        "value": 0.5,                       // Base opacity (50%)
-        "random": false,                    // Don't randomize opacity
+        "value": 0.5,
+        "random": false,
         "anim": {
-          "enable": false,                  // Disable opacity animation
-          "speed": 1,                       // Animation speed (if enabled)
-          "opacity_min": 0.1,               // Minimum opacity
-          "sync": false                     // Don't sync animations
+          "enable": false,
+          "speed": 1,
+          "opacity_min": 0.1,
+          "sync": false
         }
       },
-      
-      /* Size settings */
       "size": {
-        "value": 3,                         // Base particle size
-        "random": true,                     // Randomize particle sizes
+        "value": 3,
+        "random": true,
         "anim": {
-          "enable": false,                  // Disable size animation
-          "speed": 19.18081918081918,       // Animation speed (if enabled)
-          "size_min": 0.1,                  // Minimum size
-          "sync": false                     // Don't sync animations
+          "enable": false,
+          "speed": 19.18081918081918,
+          "size_min": 0.1,
+          "sync": false
         }
       },
-      
-      /* Connection lines between particles */
       "line_linked": {
-        "enable": true,                     // Enable connecting lines
-        "distance": 150,                    // Maximum distance for connections
-        "color": "#6c48ab",                 // Purple color for lines
-        "opacity": 0.4,                     // Line opacity (40%)
-        "width": 2                          // Line width
+        "enable": true,
+        "distance": 150,
+        "color": "#6c48ab",
+        "opacity": 0.4,
+        "width": 2
       },
-      
-      /* Movement configuration */
       "move": {
-        "enable": true,                     // Enable particle movement
-        "speed": 5,                         // Movement speed
-        "direction": "none",                // No specific direction
-        "random": true,                     // Randomize movement
-        "straight": false,                  // Don't move in straight lines
-        "out_mode": "out",                  // Remove particles that go off-screen
-        "bounce": false,                    // Don't bounce off edges
+        "enable": true,
+        "speed": 5,
+        "direction": "none",
+        "random": true,
+        "straight": false,
+        "out_mode": "out",
+        "bounce": false,
         "attract": {
-          "enable": false,                  // Disable attraction effects
-          "rotateX": 600,                   // X-axis rotation (if enabled)
-          "rotateY": 1200                   // Y-axis rotation (if enabled)
+          "enable": false,
+          "rotateX": 600,
+          "rotateY": 1200
         }
       },
-      
-      "nb": 80                              // Additional particle count
+      "nb": 80
     },
-    
-    /* 
-      INTERACTIVITY CONFIGURATION
-      ===========================
-      Defines how particles respond to user interaction
-    */
     "interactivity": {
-      "detect_on": "window",                // Detect interaction on entire window
+      "detect_on": "window",
       "events": {
-        
-        /* Mouse hover effects */
         "onhover": {
-          "enable": true,                   // Enable hover effects
-          "mode": "repulse"                 // Push particles away on hover
+          "enable": true,
+          "mode": "repulse"
         },
-        
-        /* Mouse click effects */
         "onclick": {
-          "enable": true,                   // Enable click effects
-          "mode": "push"                    // Add new particles on click
+          "enable": true,
+          "mode": "push"
         },
-        
-        "resize": true                      // Redraw on window resize
+        "resize": true
       },
-      
-      /* Interaction mode configurations */
       "modes": {
-        
-        /* Grab mode (not used but configured) */
         "grab": {
-          "distance": 400,                  // Grab distance
+          "distance": 400,
           "line_linked": {
-            "opacity": 1                    // Full opacity for grabbed lines
+            "opacity": 1
           }
         },
-        
-        /* Bubble mode (not used but configured) */
-        "bubble": {
-          "distance": 400,                  // Bubble effect distance
-          "size": 40,                       // Bubble size
-          "duration": 2,                    // Animation duration
-          "opacity": 8,                     // Bubble opacity
-          "speed": 3                        // Animation speed
-        },
-        
-        /* Repulse mode (used on hover) */
         "repulse": {
-          "distance": 200,                  // Repulsion distance
-          "duration": 0.4                   // Animation duration
+          "distance": 200,
+          "duration": 0.4
         },
-        
-        /* Push mode (used on click) */
         "push": {
-          "particles_nb": 4                 // Number of particles to add
-        },
-        
-        /* Remove mode (not used but configured) */
-        "remove": {
-          "particles_nb": 2                 // Number of particles to remove
+          "particles_nb": 4
         }
       }
     },
-    
-    "retina_detect": true                   // Enable retina display detection
+    "retina_detect": true
   });
 
-}, false); // End of DOMContentLoaded event listener
+}, false);
