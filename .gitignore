@@ -148,3 +148,4 @@ coverage/               # Coverage directory
 *.orig                  # Merge conflict files
 *.rej                   # Rejected patch files
 .directory              # Directory metadata
+node_modules
