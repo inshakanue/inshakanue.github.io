@@ -226,6 +226,11 @@ body {
   justify-content: center;                  // Center the icons
   text-align: center;                       // Center text within icons
   
+  /* Link styling - remove underlines */
+  a {
+    text-decoration: none;                  // Remove underline from links
+  }
+  
   /* Individual icon styling */
   .icon {
     display: flex;                          // Use flexbox for centering
