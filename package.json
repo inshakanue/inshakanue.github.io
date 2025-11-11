@@ -1,61 +1,23 @@
 {
-  "_comment": "PORTFOLIO WEBSITE PACKAGE CONFIGURATION",
-  "_description": "Jekyll-based portfolio website with animated particles background and modern build tools",
-  
   "name": "particle",
   "version": "1.0.0",
   "description": "AI Product Manager portfolio website with interactive particles background",
   "main": "index.js",
-  
-  "_scripts_comment": "Available npm/yarn scripts for development and building",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "_dev_comment": "Run 'gulp' or 'npx gulp' to start development server with live reload",
-    "_build_comment": "Run 'gulp sass' and 'gulp js' to build assets, then 'jekyll build' to generate site"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  
   "author": "Insha Kanue",
   "license": "ISC",
-  
-  "_dependencies_comment": "Production dependencies required for the build process",
   "dependencies": {
     "browser-sync": "^3.0.4",
-    "_browser_sync_comment": "Live reload development server for real-time preview during development",
-    
     "gulp": "^5.0.1",
-    "_gulp_comment": "Main build system for task automation and file processing",
-    
     "gulp-concat": "^2.6.1",
-    "_gulp_concat_comment": "Concatenates multiple JavaScript files into a single file for better performance",
-    
     "gulp-csso": "^4.0.1",
-    "_gulp_csso_comment": "CSS minification and optimization tool to reduce file sizes",
-    
     "gulp-plumber": "^1.2.1",
-    "_gulp_plumber_comment": "Error handling plugin that prevents Gulp from crashing on build errors",
-    
     "gulp-sass": "^6.0.1",
-    "_gulp_sass_comment": "SCSS compilation plugin for converting SCSS to CSS",
-    
     "gulp-uglify": "^3.0.2"
-    "_gulp_uglify_comment": "JavaScript minification plugin to reduce file sizes and improve performance"
   },
-  
-  "_devDependencies_comment": "Development-only dependencies not included in production build",
   "devDependencies": {
     "sass": "^1.93.2"
-    "_sass_comment": "Dart Sass compiler required by gulp-sass for SCSS compilation"
-  },
-  
-  "_build_process_comment": "The build process works as follows:",
-  "_build_steps": [
-    "1. SCSS files in src/styles/ are compiled to CSS using gulp-sass and Dart Sass",
-    "2. JavaScript files in src/js/ are concatenated and minified using gulp-concat and gulp-uglify",
-    "3. Images in src/img/ are copied to assets/img/ directory",
-    "4. Jekyll processes all templates and generates static HTML in _site/ directory",
-    "5. Browser-sync serves the site and provides live reload during development"
-  ],
-  
-  "_security_comment": "All dependencies have been audited and updated to latest secure versions",
-  "_vulnerabilities": "0 vulnerabilities found (previously had 329 vulnerabilities before cleanup)"
+  }
 }
