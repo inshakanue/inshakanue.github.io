@@ -37,9 +37,26 @@ $cut: 768px;           // Mobile/desktop breakpoint
   ===========
   Reset and base styling for consistent cross-browser appearance.
 */
-body {
+/* 
+  GLOBAL RESET
+  ============
+  Remove all default margins, padding, and ensure proper layout.
+*/
+* {
+  box-sizing: border-box;                       // Include padding and border in element's total width and height
+}
+
+html, body {
   margin: 0;                                    // Remove default browser margins
+  padding: 0;                                   // Remove default browser padding
+  height: 100%;                                 // Full height for proper layout
+  width: 100%;                                  // Full width
+}
+
+body {
   font-family: 'Montserrat', sans-serif;        // Set primary font family
+  overflow-x: hidden;                           // Prevent horizontal scroll
+  line-height: 1.6;                             // Better line spacing for readability
 }
 
 /* 
@@ -105,16 +122,22 @@ body {
   background: $main;                         // Use primary color as background
   display: block;                            // Ensure it's a block element
   vertical-align: bottom;                    // Align to bottom
-  width: 100vw;                             // Full viewport width
-  height: 100vh;                            // Fixed viewport height
+  width: 100%;                              // Full width (use 100% instead of 100vw to avoid scrollbar issues)
+  height: 100vh;                            // Fixed viewport height (not min-height to prevent expansion)
+  margin: 0;                                // Remove any margins
+  padding: 0;                               // Remove any padding
   background-repeat: no-repeat;              // Prevent background repetition
   background-size: cover;                    // Cover entire container
   background-attachment: fixed;              // Fixed background (parallax effect)
+  position: relative;                        // Positioning context for absolute children
   
   /* Particles canvas styling */
   .particles-js-canvas-el {
-    width: 100vw !important;                 // Force full width
+    width: 100% !important;                  // Force full width
     height: 100vh !important;                // Force full height
+    position: absolute;                      // Absolute positioning
+    top: 0;                                  // Align to top
+    left: 0;                                 // Align to left
   }
 }
 
@@ -284,9 +307,12 @@ body {
 .footer {
   background: $main;                        // Primary background color
   padding: 10px 0;                         // Vertical padding
-  margin-top: 0;                           // No space from content above
+  margin: 0;                               // Remove all margins (no space from content above)
   text-align: center;                      // Center all text
   color: #FFF;                             // White text
+  width: 100%;                             // Full width
+  position: relative;                      // Positioning context
+  z-index: 1;                              // Ensure footer appears above particles if needed
   
   /* Heart emoji styling */
   .love {
